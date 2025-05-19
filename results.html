@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جولة 33 – نتائج مباريات دوري روشن</title>
+<style>
+ body{font-family:"Tajawal",sans-serif;direction:rtl;margin:0;background:#fff;color:#111}
+ h1{background:#fff;color:#1d4ed8;margin:0;padding:16px;text-align:center;font-size:1.4rem}
+ section{padding:16px}
+ h2{color:#1d4ed8;font-size:1.1rem;margin:12px 0 4px}
+ .match{font-size:1rem;border-bottom:1px solid #e5e7eb;padding:6px 0}
+</style>
+<script>
+const matches=[
+ {date:"20 مايو", list:[
+    {home:"القادسية", away:"العروبة", h:0, a:0},
+    {home:"التعاون",  away:"الرياض",   h:0, a:0},
+    {home:"الشباب",    away:"الاتحاد",  h:0, a:0}]},
+ {date:"21 مايو", list:[
+    {home:"النصر",    away:"الخليج",   h:0, a:0},
+    {home:"الخلود",   away:"الفيحاء",  h:0, a:0},
+    {home:"الوحدة",   away:"الهلال",   h:0, a:0}]},
+ {date:"22 مايو", list:[
+    {home:"الأخدود",  away:"الرائد",   h:0, a:0},
+    {home:"ضمك",      away:"الفتح",    h:0, a:0},
+    {home:"الأهلي",   away:"الاتفاق",  h:0, a:0}]}
+];
+function render(){
+ const container=document.getElementById('matches');
+ container.innerHTML='';
+ matches.forEach(sec=>{
+    const h2=document.createElement('h2');h2.textContent=sec.date;container.appendChild(h2);
+    sec.list.forEach(m=>{
+      const div=document.createElement('div');div.className='match';
+      div.textContent=`${m.home} ${m.h}-${m.a} ${m.away}`;
+      container.appendChild(div);
+    });
+ });
+}
+window.addEventListener('DOMContentLoaded',render);
+</script>
+</head>
+<body>
+<h1>جولة 33 – نتائج مباريات دوري روشن</h1>
+<div id="matches"></div>
+</body>
+</html>
